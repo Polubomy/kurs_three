@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+<div class="wrapper">
+    <div class="title">
+        Login Form
+    </div>
+    <form action="{{ url_for('login') }}" method="POST">
+        <div class="field">
+            <input type="text" name="email"  required>
+            <label>Email Address</label>
+        </div>
+        <div class="field">
+            <input type="password" name="password" required>
+            <label>Password</label>
+        </div>
+        <div class="content">
+            <div class="checkbox">
+                <input type="checkbox" id="remember-me">
+                <label for="remember-me">Remember me</label>
+            </div>
+            <div class="pass-link">
+                <a href="#">Forgot password?</a>
+            </div>
+        </div>
+        <div class="field">
+            <input type="submit" value="Login">
+        </div>
+    </form>
+    {% if error %}
+    <p style="color:red; text-align:center;">{{ error }}</p>
+    {% endif %}
+</div>
+</body>
+</html>
